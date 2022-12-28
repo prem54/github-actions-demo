@@ -3,7 +3,7 @@ name: My Git Demo
 on:
   push:
     branches:
-      - 'repo-1'
+      - 'repo1'
       
       
 jobs:
