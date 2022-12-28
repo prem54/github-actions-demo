@@ -13,3 +13,10 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
+        
+      - uses: EndBug/add-and-commit@v9
+        with:
+          remove: ~/test.txt
+          message: Show GitHub Actions logo
+          committer_name: GitHub Actions
+          committer_email: actions@github.com
