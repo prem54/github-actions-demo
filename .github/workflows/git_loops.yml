@@ -1,0 +1,18 @@
+
+name: Loop Demo
+
+on:
+  push:
+    branches:
+      - 'repo1'
+
+jobs:
+  loopcheck:
+    strategy:
+      matrix:
+        scssfiles: [fileone,file2]
+    runs-on: [ubuntu-latest]
+    steps:
+      - name: test
+        run: |
+          echo ${{ matrix.scssfiles }}.scss
