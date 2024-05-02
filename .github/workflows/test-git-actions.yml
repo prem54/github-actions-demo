@@ -1,4 +1,4 @@
-name: My Git Demo
+name: Git Commit Demo
 
 on:
   push:
