@@ -1,9 +1,9 @@
 name: Git Commit Demo
 
-on:
-  push:
-    branches:
-      - 'repo1'
+# on:
+#   push:
+#     branches:
+#       - 'repo1'
       
       
 jobs:
