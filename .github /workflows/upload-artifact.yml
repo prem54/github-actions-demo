@@ -1,0 +1,27 @@
+#Test
+name: Upload Artifacts
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Create File
+        run: |
+          mkdir build
+          echo "Hello!" >> build/test.txt
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: buildtest
+          path: ./build # Adjust this to your build directory
+          retention-days: 30
+
+      - name: Verify artifact upload
+        run: ls -al ./build
