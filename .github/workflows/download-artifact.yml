@@ -14,8 +14,8 @@ jobs:
       - name: Download artifact
         uses: actions/download-artifact@v4
         with:
-          name: build-artifact
-          #path: ./downloaded-artifacts
+          name: build
+          path: ./downloaded-artifacts
 
       - name: Use downloaded artifacts
         run: |
