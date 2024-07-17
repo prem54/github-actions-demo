@@ -1,10 +1,10 @@
 
 name: Loop Demo
 
-on:
-  push:
-    branches:
-      - 'repo1'
+# on:
+#   push:
+#     branches:
+#       - 'repo1'
 
 jobs:
   loopcheck:
