@@ -1,0 +1,23 @@
+name: Download Artifacts
+
+on:
+  workflow_run:
+    workflows: ["Upload Artifacts"]
+    types:
+      - completed
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: build-artifact
+          path: ./downloaded-artifacts
+
+      - name: Use downloaded artifacts
+        run: |
+          echo "Files downloaded from build artifact:"
+          ls ./downloaded-artifacts
