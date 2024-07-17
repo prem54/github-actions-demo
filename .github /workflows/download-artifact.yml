@@ -1,0 +1,24 @@
+name: Download Artifacts
+
+on:
+  workflow_run:
+    workflows: ["Upload Artifacts"]
+    types:
+      - completed
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: buildtest
+          path: ./downloaded-artifacts
+
+      - name: Verify artifact download
+        run: ls -al ./downloaded-artifacts
+
+      - name: Use downloaded artifacts
+        run: ls -R
