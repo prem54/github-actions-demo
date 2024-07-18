@@ -21,6 +21,7 @@ jobs:
         uses: dawidd6/action-download-artifact@v6
         with:
           github_token: ${{secrets.GITHUB_TOKEN}}
+          name: buildtest
           path: ./downloaded-artifacts
 
       - name: Download artifact
