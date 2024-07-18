@@ -17,6 +17,7 @@ jobs:
           name: buildtest
           path: ./downloaded-artifacts
           github-token: ${{ secrets.GH_PAT }}
+          repository: prem54/github-actions-demo
 
       - name: Verify artifact download
         run: ls -al ./downloaded-artifacts
