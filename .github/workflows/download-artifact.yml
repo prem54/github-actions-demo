@@ -16,6 +16,7 @@ jobs:
         with:
           name: buildtest
           path: ./downloaded-artifacts
+          github-token: ${{ secrets.GH_PAT }}
 
       - name: Verify artifact download
         run: ls -al ./downloaded-artifacts
