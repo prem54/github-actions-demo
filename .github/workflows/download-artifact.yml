@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - run: |
-          gh run download --repo "${{ github.repository}}" --name artifact --dir . "${{ github.run_id }}"
+          gh run download --repo "${{ github.repository}}" --name buildtest --dir . "${{ github.run_id }}"
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PAT }}
 
