@@ -17,7 +17,7 @@ jobs:
           name: buildtest
           path: ./downloaded-artifacts
           github-token: ${{ secrets.GH_PAT }}
-          repository: prem54/github-actions-demo
+          #repository: prem54/github-actions-demo
           run-id: ${{ github.event.workflow_run.id }}
 
       - name: Verify artifact download
