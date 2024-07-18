@@ -14,7 +14,7 @@ jobs:
       - run: |
           gh run download --repo "${{ github.repository}}" --name artifact --dir . "${{ github.run_id }}"
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}   
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
       - name: Download artifact
         uses: actions/download-artifact@v4
         with:
