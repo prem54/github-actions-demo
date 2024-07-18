@@ -1,5 +1,5 @@
 #Test1
-name: Upload Files
+name: Download Artifacts
 
 on:
   push:
