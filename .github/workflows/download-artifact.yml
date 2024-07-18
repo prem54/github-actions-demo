@@ -23,6 +23,7 @@ jobs:
           github_token: ${{secrets.GITHUB_TOKEN}}
           name: buildtest
           path: ./downloaded-artifacts
+          check_artifacts: true
 
       - name: Download artifact
         uses: actions/download-artifact@v4
