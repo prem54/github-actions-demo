@@ -16,7 +16,7 @@ jobs:
           echo "Hello!" >> build/test.txt
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: buildtest
           path: ./build # Adjust this to your build directory
