@@ -1,8 +1,8 @@
-name: Download Artifacts
+name: Download Files
 
 on:
   workflow_run:
-    workflows: ["Upload Artifacts"]
+    workflows: ["Upload Files"]
     types:
       - completed
 
