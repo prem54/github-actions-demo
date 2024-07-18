@@ -11,10 +11,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - run: |
-          gh run download --repo "${{ github.repository}}" --name buildtest --dir . "${{ github.run_id }}"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+      # - run: |
+      #     gh run download --repo "${{ github.repository}}" --name buildtest --dir . "${{ github.run_id }}"
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GH_PAT }}
 
       - name: Download artifact
         uses: actions/download-artifact@v4
