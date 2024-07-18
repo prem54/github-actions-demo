@@ -16,7 +16,7 @@ jobs:
         with:
           name: buildtest
           path: ./downloaded-artifacts
-          github-token: ${{ secrets.GH_PAT }}
+          #github-token: ${{ secrets.GH_PAT }}
           #repository: prem54/github-actions-demo
           run-id: ${{ github.event.workflow_run.id }}
 
