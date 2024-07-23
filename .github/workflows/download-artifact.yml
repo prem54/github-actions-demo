@@ -6,6 +6,12 @@ on:
     types:
       - completed
 
+permissions:
+      id-token: write
+      contents: read
+      checks: write
+      actions: read
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -20,11 +26,12 @@ jobs:
         id: download-artifact1
         uses: dawidd6/action-download-artifact@v6
         with:
-          github_token: ${{secrets.GITHUB_TOKEN}}
           name: buildtest
           path: ./downloaded-artifacts
           check_artifacts: true
           repo: ${{ github.repository }}
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ github.token }}
 
       - name: Download artifact
         uses: actions/download-artifact@v4
