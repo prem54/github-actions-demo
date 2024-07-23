@@ -18,8 +18,8 @@ jobs:
 
       - name: Echo
         run: |
-          echo $GITHUB_HEAD_REF
-          echo $GITHUB_REF
+          echo "Value for GITHUB_HEAD_REF: " $GITHUB_HEAD_REF
+          echo "Value for GITHUB_REF: " $GITHUB_REF
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
