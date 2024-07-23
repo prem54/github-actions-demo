@@ -16,6 +16,11 @@ jobs:
           mkdir build
           echo "Hello!" >> build/test.txt
 
+      - name: Echo
+        run: |
+          echo $GITHUB_HEAD_REF
+          echo $GITHUB_REF
+
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
