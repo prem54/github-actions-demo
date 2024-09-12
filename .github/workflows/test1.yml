@@ -1,0 +1,28 @@
+name: Pass Dynamic Strategy in GitHub Actions
+
+on: [push]
+
+jobs:
+  job-one:
+    runs-on: ubuntu-latest
+    outputs:
+      config_type: ${{ steps.set-vars.outputs.config_type }}
+      env: ${{ steps.set-vars.outputs.env }}
+    steps:
+      - name: Determine matrix strategy
+        id: set-vars
+        run: |
+          # Logic to determine matrix values
+          echo "::set-output name=config_type::v1,v2"
+          echo "::set-output name=env::A,B"
+
+  job-two:
+    needs: job-one
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        config_type: [${{ needs.job-one.outputs.config_type }}]
+        env: [${{ needs.job-one.outputs.env }}]
+    steps:
+      - name: Use matrix values
+        run: echo "Running for config_type ${{ matrix.config_type }} and env ${{ matrix.env }}"
