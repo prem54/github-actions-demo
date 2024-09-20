@@ -17,7 +17,8 @@ jobs:
     runs-on: ubuntu-latest
     #if: github.event.pull_request.user.login == 'prem54'
     #&& ${{ github.event.issue.pull_request }}
-    if: github.event.comment.body == 'Apply' && github.event.issue.pull_request
+    #if: github.event.comment.body == 'Apply' && github.event.issue.pull_request
+    if: github.event.review.body == 'Apply' && github.event.issue.pull_request
     steps:
       - uses: actions/github-script@v4
         with:
