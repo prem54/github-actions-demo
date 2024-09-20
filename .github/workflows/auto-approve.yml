@@ -1,4 +1,4 @@
-name: PR Approval
+name: PR Approval.
 # on:
 #   pull_request_target:
 #     branches:
