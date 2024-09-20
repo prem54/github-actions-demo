@@ -1,6 +1,6 @@
 name: PR Approval
 on:
-  pull_request:
+  pull_request_target:
     branches:
       - main
     types: [opened] # probably the only one you need
