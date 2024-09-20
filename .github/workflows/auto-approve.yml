@@ -5,11 +5,11 @@ name: PR Approval
 #       - main
 #     types: [opened] # probably the only one you need
 
-# on:
-#   issue_comment:
-#     types: [created]
+on:
+  issue_comment:
+    types: [created]
 
-on: issue_comment
+# on: issue_comment
 
 jobs:
   build:
