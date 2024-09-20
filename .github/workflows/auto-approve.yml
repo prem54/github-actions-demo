@@ -1,16 +1,23 @@
 name: PR Approval
+# on:
+#   pull_request_target:
+#     branches:
+#       - main
+#     types: [opened] # probably the only one you need
+
 on:
-  pull_request_target:
+  issue_comment:
+    types: [created]
     branches:
       - main
-    types: [opened] # probably the only one you need
 
 
 jobs:
   build:
     name: Auto-approve
     runs-on: ubuntu-latest
-    if: github.event.pull_request.user.login == 'prem54'
+    #if: github.event.pull_request.user.login == 'prem54'
+    if: github.event.issue.pull_request == "Apply" && github.event.pull_request.user.login == 'prem54' # Only trigger if the comment is on a PR
     steps:
       - uses: actions/github-script@v4
         with:
