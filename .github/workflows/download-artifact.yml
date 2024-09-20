@@ -1,4 +1,4 @@
-name: Download Files
+name: Download Files.
 
 on:
   workflow_run:
