@@ -15,7 +15,7 @@ jobs:
   build:
     name: Auto-approve
     runs-on: ubuntu-latest
-    #if: github.event.pull_request.user.login == 'prem54'
+    #if: github.event.pull_request.user.login == 'prem54'.
     if: |
       ${{ github.event.issue.pull_request }} != null &&
       ${{ github.event.comment.body }} == 'Apply'
