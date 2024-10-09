@@ -7,4 +7,6 @@ jobs:
   Test:
     runs-on: ubuntu-latest
     steps:
-    - run: echo "Hello!"
+    - run: |
+        echo "Hello!"
+        echo $GITHUB_REF
